@@ -11,6 +11,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
+# Set environment variables
+ENV PORT=8000
+ENV DJANGO_SETTINGS_MODULE=myproject.settings
+
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
