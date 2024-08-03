@@ -24,15 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-og58-r4%!rk5gm&4lj!+l5@)20+ze=5_#%$$&0o-j@kf1y(v6y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =  True
 
 ALLOWED_HOSTS = [
-
-    "http://192.168.1.109:3000",
-    "https://api.stuckmedia.com",
-    "http://192.168.18.196:3000",
-
+    '127.0.0.1',
+    'localhost',
+    '192.168.1.109',
+    'api.stuckmedia.com',
+    '192.168.18.196',
 ]
+
 
 
 # Application definition
@@ -45,8 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'myapp',
+    'api',
     'corsheaders',
+    'rest_framework_swagger',
+        'drf_yasg',
+
 
 ]
 
@@ -66,7 +70,7 @@ ROOT_URLCONF = 'stuckmedia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Add any additional template directories here
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,7 +130,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = 'static/'
 
@@ -158,4 +161,6 @@ CORS_ALLOW_HEADERS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-PORT = os.getenv('PORT', 8000)
+# PORT = os.getenv('PORT', 8000)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
