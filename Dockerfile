@@ -12,7 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set environment variables
-ENV PORT=8000
 ENV DJANGO_SETTINGS_MODULE=stuckmedia.settings
 
 # Collect static files
@@ -22,4 +21,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:${PORT:-8000}", "stuckmedia.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "stuckmedia.wsgi:application"]
