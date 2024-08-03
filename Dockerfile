@@ -13,7 +13,8 @@ COPY . .
 
 # Set environment variables
 ENV DJANGO_SETTINGS_MODULE=stuckmedia.settings
-ENV PORT=8000  # Default port value
+# Default port value
+ENV PORT=8000  
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
