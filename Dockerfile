@@ -4,9 +4,6 @@ FROM python:3.10-slim
 # Set the working directory
 WORKDIR /usr/src/app
 
-# Upgrade pip to ensure compatibility
-RUN pip install --upgrade pip
-
 # Install any needed packages specified in requirements.txt
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
@@ -16,7 +13,8 @@ COPY . .
 
 # Set environment variables
 ENV DJANGO_SETTINGS_MODULE=stuckmedia.settings
-ENV PORT=8000
+# Default port value
+ENV PORT=8000  
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
