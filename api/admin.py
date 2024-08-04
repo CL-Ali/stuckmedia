@@ -1,8 +1,10 @@
 from django.contrib import admin
 from .models import ClientFeedback, Service, PricingPlan, SkillCategory, TeamMember
+from .forms import ClientFeedbackForm, TeamMemberForm
 
 @admin.register(ClientFeedback)
 class ClientFeedbackAdmin(admin.ModelAdmin):
+    form = ClientFeedbackForm
     list_display = ('name', 'designation', 'feedback')
 
 @admin.register(Service)
@@ -20,5 +22,6 @@ class SkillCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
-    list_display = ('name', 'role')
+    form =  TeamMemberForm
+    list_display = ('name', 'role',  'facebook', 'twitter', 'instagram')  # Update fields here
 

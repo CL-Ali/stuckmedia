@@ -1,7 +1,7 @@
 from django.db import models
 
 class ClientFeedback(models.Model):
-    image = models.ImageField(upload_to='client_feedback_images/', blank=True, null=True)
+    image_base64 = models.TextField(blank=True, null=True)
     feedback = models.TextField()
     name = models.CharField(max_length=100)
     designation = models.CharField(max_length=100)
@@ -37,7 +37,7 @@ class SkillCategory(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='team_member_images/', blank=True, null=True)
+    image_base64 = models.TextField(blank=True, null=True)
     facebook = models.URLField(blank=True, null=True)
     twitter = models.URLField(blank=True, null=True)
     instagram = models.URLField(blank=True, null=True)

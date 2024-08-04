@@ -2,6 +2,7 @@ from rest_framework import generics
 from .models import ClientFeedback, Service, PricingPlan, SkillCategory, TeamMember
 from .serializers import ClientFeedbackSerializer, ServiceSerializer, PricingPlanSerializer, SkillCategorySerializer, TeamMemberSerializer
 
+
 class ClientFeedbackListCreate(generics.ListCreateAPIView):
     queryset = ClientFeedback.objects.all()
     serializer_class = ClientFeedbackSerializer
