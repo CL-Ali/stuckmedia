@@ -36,7 +36,7 @@ class SkillCategory(models.Model):
 
 class TeamMember(models.Model):
     name = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
+    role = models.CharField(max_length=200)
     image_base64 = models.TextField(blank=True, null=True)
     facebook = models.URLField(blank=True, null=True)
     twitter = models.URLField(blank=True, null=True)

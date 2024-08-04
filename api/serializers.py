@@ -33,7 +33,7 @@ class TeamMemberSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ClientFeedback
-        fields = ['image', 'image_base64', 'name', 'role', 'facebook', 'twitter', 'instagram']
+        fields = ['image', 'image_base64', 'role', 'name', 'facebook', 'twitter', 'instagram']
 
     def create(self, validated_data):
         # Extract image file if present
