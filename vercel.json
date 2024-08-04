@@ -10,10 +10,11 @@
       }
     ],
     "routes": [
-        {
-          "src": "/(.*)",
-          "dest": "/static/"
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
       },
+  
       {
         "src": "/(.*)",
         "dest": "stuckmedia/wsgi.py"
