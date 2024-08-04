@@ -1,38 +1,6 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "manage.py",
-        "use": "@vercel/python",
-        "config": {
-          "maxLambdaSize": "50mb"
-        }
-      },
-      {
-        "src": "static/**/*",
-        "use": "@vercel/static",
-        "config": {
-          "maxLambdaSize": "50mb"
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/manage.py"
-      }
-    ],
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "stuckmedia.settings",
-      "DATABASE_URL": "@database-url",
-      "SECRET_KEY": "@secret-key",
-      "DEBUG": "False",
-      "ALLOWED_HOSTS": "localhost,127.0.0.1"
-    },
-    "functions": {
-      "manage.py": {
-        "maxDuration": 60
-      }
-    }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
+    ]
   }
   
