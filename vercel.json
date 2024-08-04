@@ -12,6 +12,10 @@
     "routes": [
       {
         "src": "/(.*)",
+        "dest": "static/"
+      },
+      {
+        "src": "/(.*)",
         "dest": "stuckmedia/wsgi.py"
       }
     ]
